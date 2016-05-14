@@ -1,0 +1,30 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>creater</th>
+      <th>name</th>
+      <th>description</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+  <% unless albums_data.blank? %>
+    <tbody>
+       <% albums_data.each do |album|%>
+        <tr>
+          <td><%= album.user.name %></td>
+          <td><%= album.name %></td>
+          <td><%= album.description %></td>
+          <td><%= link_to 'Show', album_path(album), class: "save btn btn-success" %></td>
+          <% if can? :update, album %>
+            <td><%= link_to 'Edit', edit_album_path(album), class: "save btn btn-default" %></td>
+          <% end %>
+          <% if can? :destroy, album %>
+            <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' }, class: "save btn btn-danger" %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  <% else %>
+    No album found
+  <% end %>
+</table>

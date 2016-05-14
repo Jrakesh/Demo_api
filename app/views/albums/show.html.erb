@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <p id="notice"><%= notice %></p>
+  <h3>Created By: <strong><%= @album.user.name %></strong></h3>
+  <hr>      
+  <h4>Name: <strong><%= @album.name %></strong></h4> 
+  <h4>Description: <strong><%= @album.description %></strong></h4>
+  <br>
+  <%= link_to 'Edit album', edit_album_path(@album), class: "save btn btn-warning" %>
+  &nbsp;&nbsp;
+  <%= link_to 'Go back', albums_path, class: "save btn btn-info" %>
+  <div class="row">
+    <div class="col-lg-12">
+    <h1 class="page-header">Album pictures
+        <small>images</small>
+        <%= link_to "Add picture", new_album_picture_path(@album), class: "btn btn-primary pull-right"%>
+      </h1>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <% unless @album_pictures.blank? %>
+    <% @album_pictures.each_slice(4) do |pics| %>
+      <div class="row">
+        <% pics.each do |pic| %>
+          <div class="col-md-3 portfolio-item">
+            <a href="#">
+              <%= image_tag(pic.image.url, class: "img-responsive", width: "400px", height: "400px")%>
+            </a>
+            <h3>
+              <%= link_to album_picture_path(pic.album, pic) do %>
+                <%= pic.name %>
+              <% end %>
+            </h3>
+            <p><%= pic.description %></p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% else %>
+    <h4>No pictures added in this album</h4>
+  <% end %>
+</div>
