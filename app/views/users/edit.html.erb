@@ -1,0 +1,16 @@
+<div class="authform">
+  <%= form_for(@user, method: "put", :html => { :role => 'form'}) do |f| %>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+
+    </div>
+     <%= f.submit 'update', :class => 'button right' %>
+  <% end %>
+</div>

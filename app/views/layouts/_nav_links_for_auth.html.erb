@@ -6,6 +6,9 @@
 <% end %>
 <% if user_signed_in? %>
   <li><%= link_to 'Albums', albums_path %></li>
+	<% if current_user.has_role? :admin %>
+	  <li><%= link_to 'users', users_path %></li>
+	<% end %>
 <% end %>
 
 

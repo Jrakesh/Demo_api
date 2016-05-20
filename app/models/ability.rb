@@ -1,20 +1,26 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+  def initialize(user=current_api_user)
     
     if user.has_role? :admin
       can :manage, :all
     elsif user.has_role? :user
       can :read, :all
-      can :create, Album
-      can :create, Picture
+      can :create, :all
+      can :create, :all
       cannot :update, Album
       cannot :update, Picture
       cannot :destroy, Album
       cannot :destroy, Picture        
     else
       can :read, :all
+      cannot :create, Album
+      cannot :create, Picture
+      cannot :update, Album
+      cannot :update, Picture
+      cannot :destroy, Album
+      cannot :destroy, Picture
     end
 
 

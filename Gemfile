@@ -11,6 +11,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'rolify'
 gem 'cancancan', '~> 1.10'
 gem 'carrierwave'
+gem 'apipie-rails', :git => 'https://github.com/Apipie/apipie-rails.git'
+gem 'jwt', '~> 1.4.1'
 group :development, :test do
   gem 'pry'
 end
@@ -30,7 +32,18 @@ group :development do
   gem 'rails_layout'
 end
 group :development, :test do
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', :require => false
   gem 'faker'
   gem 'rspec-rails'
+  gem 'airborne'
+  gem 'database_cleaner'
+  gem 'faker'
 end
+
+#gem for erd
+group :development do
+  gem "rails-erd"
+end
+#gem for notation
+gem 'annotate'
+gem 'rdoc', '~> 4.2', '>= 4.2.2'
