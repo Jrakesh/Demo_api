@@ -8,13 +8,13 @@ defaults: &defaults
   port: 5432
 
 development:
-  database: client_api_development
+  database: demo_api_development
   <<: *defaults
 
 test:
-  database: client_api_test
+  database: demo_api_test
   <<: *defaults
 
 production:
-  database: client_api_production
+  database: demo_api_production
   <<: *defaults

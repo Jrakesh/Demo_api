@@ -33,7 +33,6 @@ group :development do
 end
 group :development, :test do
   gem 'factory_girl_rails', :require => false
-  gem 'faker'
   gem 'rspec-rails'
   gem 'airborne'
   gem 'database_cleaner'

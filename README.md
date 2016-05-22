@@ -6,7 +6,7 @@
 	<li>Devise + Pundit for authorization and role based authentication.</li>
 	<li>Bootstrap integration</li>
 	<li>Role management functionality.</li>
-	<li>APIs created with documentation.</li>
+	<li>APIs created with documentation. See the documentation at http://localhost:3000/apipie</li>
 	<li>Test scenarios covered.</li>
 </ul>
 
